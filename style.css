@@ -13,6 +13,7 @@ body {
 }
 
 table {
+  width: 100%;
   border-collapse: collapse;
   background-color: #323232;
   padding: 1rem;
@@ -38,4 +39,29 @@ th {
 
 tr:nth-of-type(2n) {
   background: hsl(0 0% 0% / 0.1);
+}
+
+@media (max-width: 650px) {
+  th {
+    display: none;
+  }
+
+  td {
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+
+  td:first-child {
+    padding-top: 2rem;
+  }
+
+  td:last-child {
+    padding-bottom: 2rem;
+  }
+
+  td::before {
+    content: attr(data-cell) ": ";
+    font-weight: 700;
+    text-transform: capitalize;
+  }
 }
